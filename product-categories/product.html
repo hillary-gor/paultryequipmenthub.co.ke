@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Poultry Equipment Hub</title>
+  <title>Feeders & Drinkers</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -19,8 +19,8 @@
 
   <!-- Open Graph Tags for Social Sharing -->
   <meta property="og:title" content="Poultry Equipment Hub">
-  <meta property="og:description" content="Leading Paultry Equipment Suppliers">
-  <meta property="og:image" content="/assets/img/logoFaviconIcon/poultryEquipmentHubLogoMainLogoMain.png">
+  <meta property="og:description" content="Leading Poultry Equipment Suppliers">
+  <meta property="og:image" content="/assets/img/logoFaviconIcon/poultryEquipmentHub">
   <meta property="og:url" content="">
   <meta property="og:type" content="website">
 
@@ -40,15 +40,6 @@
 
   <!-- Main CSS File -->
   <link href="/assets/css/main.css" rel="stylesheet">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init({
-        publicKey: "wR2gAy3odO9sz_txu",
-      });
-    })();
-  </script>
 
 </head>
 
@@ -127,9 +118,77 @@
   </header>
 
   <main class="main">
-<section>
 
-</section>
+    <section>
+
+    </section>
+    <!-------------------------------------------------------------
+      Allproducts  page - products filter
+      ------------------------------------------------------------>
+    <!-- Page Controls after products are fetched -->
+    <div id="pagination-container" class="pagination-controls">
+      <!-- Page numbers will be dynamically populated here -->
+    </div>
+
+    <div class="main-container">
+      <button class="filter-button" onclick="toggleFilters()">Show Filters</button>
+      <div class="sidebar">
+        <h3>Filters</h3>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('category')">Categories +</button>
+          <div id="category" class="filter-content">
+            <!-- Categories checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('brand')">Brand +</button>
+          <div id="brand" class="filter-content">
+            <!-- Brand checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('series')">Series +</button>
+          <div id="series" class="filter-content">
+            <!-- Series checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('material')">Material +</button>
+          <div id="material" class="filter-content">
+            <!-- Material checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('size')">Size +</button>
+          <div id="size" class="filter-content">
+            <!-- Size checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('spec')">Spec +</button>
+          <div id="spec" class="filter-content">
+            <!-- Spec checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('color')">Color +</button>
+          <div id="color" class="filter-content">
+            <!-- Color checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <button class="filter-toggle" onclick="toggleFilter('price')">Price +</button>
+          <div id="price" class="filter-content">
+            <!-- Price checkboxes will be dynamically populated here -->
+          </div>
+        </div>
+      </div>
+      <div class="products-container">
+        <div id="product-container" class="pro-container">
+          <!-- Products will be dynamically populated here -->
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -238,6 +297,168 @@
   <!-- Main JS File -->
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/search-toggle.js"></script>
+  <script>
+    let allProducts = [];
+    let currentPage = 1;
+    const productsPerPage = 20;
+
+    // Fetch products from JSON and store them in allProducts
+    async function fetchProducts(category) {
+      try {
+        const response = await fetch("/assets/products/products.json");
+        const products = await response.json();
+        allProducts = products.filter((product) => product.category === category); // Filter by category
+        shuffleArray(allProducts); // Shuffle the products
+        displayProducts(
+          allProducts,
+          document.getElementById("product-container"),
+          currentPage
+        );
+        renderPagination(allProducts.length); // Render page numbers
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    }
+
+    // Shuffle array function
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Display products dynamically with pagination
+    function displayProducts(products, container, page) {
+      let productHTML = "";
+      const start = (page - 1) * productsPerPage;
+      const end = start + productsPerPage;
+      const paginatedProducts = products.slice(start, end);
+
+      if (paginatedProducts.length === 0) {
+        productHTML = "<p class='no-products-message'>No products available.</p>";
+      } else {
+        paginatedProducts.forEach((product) => {
+          const priceWithCurrency = `${product.currency || "USD"} ${product.sale_price || product.regular_price || "N/A"
+            }`;
+          const productImage =
+            product.images.length > 0
+              ? product.images[0]
+              : "/assets/img/skyjet-placeholder.png";
+
+          const whatsappMessage = encodeURIComponent(
+            `Hi, I'm interested in ordering the product "${product.name}" (SKU: ${product.sku}). Could you please provide more details?\n\nProduct Part Number: ${product.part_number}\n\nProduct Image: ${productImage}`
+          );
+          const whatsappUrl = `https://wa.me/254796962055?text=${whatsappMessage}`;
+
+          productHTML += `
+        <div 
+          class="product-card" 
+          onclick="redirectToDetails('${product.sku}')"
+          style="cursor: pointer;"
+        >
+          <img 
+            src="${productImage}" 
+            alt="${product.name}" 
+            class="product-image" 
+            onerror="this.src='/assets/img/skyjet-placeholder.png'"
+          >
+          <div class="product-details">
+            <h5 class="product-name" title="${product.name}">${product.name}</h5>
+            <h4 class="product-price">${priceWithCurrency}</h4>
+            <a 
+              href="${whatsappUrl}" 
+              target="_blank" 
+              class="btn order-whatsapp"
+            >
+              <img 
+                src="/assets/img/logoFaviconIcon/whatsapp.png" 
+                alt="WhatsApp Icon" 
+                class="whatsapp-icon"
+              > 
+              Enquire via WhatsApp
+            </a>
+          </div>
+        </div>
+      `;
+        });
+      }
+
+      container.innerHTML = productHTML;
+    }
+
+    // Render Pagination with Limited Page Numbers
+    function renderPagination(totalProducts) {
+      const paginationContainer = document.getElementById("pagination-container");
+      const totalPages = Math.ceil(totalProducts / productsPerPage);
+      const maxVisiblePages = 4; // Number of pages to show at a time
+      let paginationHTML = "";
+
+      // Previous Button
+      paginationHTML += `
+    <button 
+      class="page-button prev" 
+      onclick="changePage(currentPage - 1)" 
+      ${currentPage === 1 ? "disabled" : ""}>
+      &lt;
+    </button>
+  `;
+
+      // Calculate visible page range
+      const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+      const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+      for (let i = startPage; i <= endPage; i++) {
+        paginationHTML += `
+      <button 
+        class="page-button ${i === currentPage ? "active" : ""}" 
+        onclick="changePage(${i})">
+        ${i}
+      </button>
+    `;
+      }
+
+      // Next Button
+      paginationHTML += `
+    <button 
+      class="page-button next" 
+      onclick="changePage(currentPage + 1)" 
+      ${currentPage === totalPages ? "disabled" : ""}>
+      &gt;
+    </button>
+  `;
+
+      paginationContainer.innerHTML = paginationHTML;
+    }
+
+    // Change page function
+    function changePage(pageNumber) {
+      const totalPages = Math.ceil(allProducts.length / productsPerPage);
+
+      if (pageNumber > 0 && pageNumber <= totalPages) {
+        currentPage = pageNumber;
+        displayProducts(
+          allProducts,
+          document.getElementById("product-container"),
+          currentPage
+        );
+        renderPagination(allProducts.length); // Update pagination buttons
+      }
+    }
+
+    // Redirect to product details page
+    function redirectToDetails(sku) {
+      window.location.href = `/product-details/product-details.html?sku=${sku}`;
+    }
+
+    // Fetch products on page load based on category
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const category = urlParams.get("category") || "Incubators"; // Default to "Feeders"
+      fetchProducts(category);
+    });
+
+  </script>
 
 </body>
 

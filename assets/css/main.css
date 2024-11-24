@@ -3096,12 +3096,12 @@ html {
   }
 }
 
-/* Styles for desktops */
+/* Styles for desktops *
 @media (min-width: 1024px) {
   #product-container {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
-}
+}*/
 
 /*--------------------------------------------------------------
 # Features Section

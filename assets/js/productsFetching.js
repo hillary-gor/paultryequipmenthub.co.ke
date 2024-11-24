@@ -6,8 +6,8 @@ const productsPerPage = 20;
 async function fetchProducts() {
   try {
     const response = await fetch("/assets/products/products.json");
-    const products = await response.json();
-    allProducts = products; // Store all products
+    const data = await response.json();
+    allProducts = data.products; // Access the products array from JSON
     shuffleArray(allProducts); // Shuffle the products
     displayProducts(
       allProducts,
@@ -15,7 +15,6 @@ async function fetchProducts() {
       currentPage
     );
     renderPagination(allProducts.length); // Render page numbers
-    populateFilters(allProducts); // Populate the filters dynamically
   } catch (error) {
     console.error("Error fetching products:", error);
   }
@@ -41,17 +40,26 @@ function displayProducts(products, container, page) {
   } else {
     paginatedProducts.forEach((product) => {
       const priceWithCurrency = `${product.currency || "USD"} ${
-        product.price || "N/A"
+        product.sale_price || product.regular_price || "N/A"
       }`;
+      const productImage =
+        product.images.length > 0
+          ? product.images[0]
+          : "/assets/img/skyjet-placeholder.png";
+
       const whatsappMessage = encodeURIComponent(
-        `Hi, I'm interested in ordering the product "${product.name}" (SKU: ${product.sku}). Could you please provide more details?\n\nProduct Part Number: ${product.part_number}\n\nProduct Image: ${product.image}`
+        `Hi, I'm interested in ordering the product "${product.name}" (SKU: ${product.sku}). Could you please provide more details?\n\nProduct Image: ${productImage}`
       );
-      const whatsappUrl = `https://wa.me/254796962055?text=${whatsappMessage}`;
+      const whatsappUrl = `https://wa.me/+254711654351?text=${whatsappMessage}`;
 
       productHTML += `
-        <div class="product-card">
+        <div 
+          class="product-card" 
+          onclick="redirectToDetails('${product.sku}')"
+          style="cursor: pointer;"
+        >
           <img 
-            src="${product.image}" 
+            src="${productImage}" 
             alt="${product.name}" 
             class="product-image" 
             onerror="this.src='/assets/img/skyjet-placeholder.png'"
@@ -59,18 +67,17 @@ function displayProducts(products, container, page) {
           <div class="product-details">
             <h5 class="product-name">${product.name}</h5>
             <h4 class="product-price">${priceWithCurrency}</h4>
-            <p class="product-part-number"><strong>Part Number:</strong> ${
-              product.part_number || "N/A"
-            }</p>
-            <button class="btn view-more" data-sku="${
-              product.sku
-            }">More Details</button>
             <a 
               href="${whatsappUrl}" 
               target="_blank" 
               class="btn order-whatsapp"
             >
-              <img src="/assets/img/logoFaviconIcon/whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon"> Order on WhatsApp
+              <img 
+                src="/assets/img/logoFaviconIcon/whatsapp.png" 
+                alt="WhatsApp Icon" 
+                class="whatsapp-icon"
+              > 
+              Enquire via WhatsApp
             </a>
           </div>
         </div>
@@ -79,14 +86,11 @@ function displayProducts(products, container, page) {
   }
 
   container.innerHTML = productHTML;
+}
 
-  // Event listeners to "View More" buttons
-  document.querySelectorAll(".view-more").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const productSku = event.target.getAttribute("data-sku");
-      window.location.href = `/product-details/product-details.html?sku=${productSku}`;
-    });
-  });
+// Redirect to product details page
+function redirectToDetails(sku) {
+  window.location.href = `/product-details/product-details.html?sku=${sku}`;
 }
 
 // Render Pagination with Limited Page Numbers
@@ -146,12 +150,6 @@ function changePage(pageNumber) {
     );
     renderPagination(allProducts.length); // Update pagination buttons
   }
-}
-
-// Toggle filters on mobile
-function toggleFilters() {
-  const sidebar = document.querySelector(".sidebar");
-  sidebar.classList.toggle("show");
 }
 
 // Fetch products on page load
