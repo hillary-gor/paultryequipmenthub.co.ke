@@ -1,0 +1,44 @@
+[
+  {
+    "name": "PTI 7583141 FAA-PMA Non-Cleanable Oil Filter Element",
+    "price": "350",
+    "currency": "$",
+    "image": "/assets/img/products/SJT10M24YN1001.jpg",
+    "brand": "",
+    "category": "Engine Parts",
+    "description": "HP FILTER",
+    "sku": "SJT10M24YN1001",
+    "part_number": "7583141",
+    "alternate": "75880,AC9780F215,7592399-101",
+    "manufacturer": "PTI TECHNOLOGIES",
+    "availability": "IN STOCK"
+  },
+  {
+    "name": "Carbon stainer",
+    "price": "7000",
+    "currency": "KSh",
+    "image": "/assets/img/products/SJT10M24YN1654.jpg",
+    "brand": "",
+    "category": "Aircraft Cleaning Agents",
+    "description": "",
+    "sku": "SJT10M24YN1654",
+    "part_number": "",
+    "alternate": "",
+    "manufacturer": "",
+    "availability": "IN STOCK"
+  },
+  {
+    "name": "MIRAJ® M30300-1413 FAA-PMA Brush, Electrical Contact",
+    "price": "200",
+    "currency": "$",
+    "image": ".jpg",
+    "brand": "",
+    "category": "Aircraft Electricals",
+    "description": "",
+    "sku": "",
+    "part_number": "",
+    "alternate": "",
+    "manufacturer": "",
+    "availability": ""
+  }
+]
