@@ -49,6 +49,98 @@
       });
     })();
   </script>
+    <style>
+      /*--------------------------------------------------------------
+  # Contact Section
+  --------------------------------------------------------------*/
+      .contact .info-item {
+        background-color: var(--surface-color);
+        padding: 20px 0 30px 0;
+        box-shadow: 0px 0px 20px rgba(1, 9, 248, 0.1);
+      }
+  
+      .container_contact {
+        margin-top: 5%;
+      }
+  
+      .contact .info-item i {
+        font-size: 20px;
+        color: var(--accent-color);
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+        border: 2px dotted color-mix(in srgb, var(--accent-color), transparent 40%);
+      }
+  
+      .contact .info-item h3 {
+        font-size: 20px;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+  
+      .contact .info-item p {
+        padding: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+  
+      .contact .php-email-form {
+        background-color: var(--surface-color);
+        height: 100%;
+        padding: 30px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+  
+      @media (max-width: 575px) {
+        .contact .php-email-form {
+          padding: 20px;
+        }
+      }
+  
+      .contact .php-email-form input[type="text"],
+      .contact .php-email-form input[type="email"],
+      .contact .php-email-form textarea {
+        font-size: 14px;
+        padding: 10px 15px;
+        box-shadow: none;
+        border-radius: 0;
+        color: var(--default-color);
+        background-color: var(--surface-color);
+        border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+      }
+  
+      .contact .php-email-form input[type="text"]:focus,
+      .contact .php-email-form input[type="email"]:focus,
+      .contact .php-email-form textarea:focus {
+        border-color: var(--accent-color);
+      }
+  
+      .contact .php-email-form input[type="text"]::placeholder,
+      .contact .php-email-form input[type="email"]::placeholder,
+      .contact .php-email-form textarea::placeholder {
+        color: color-mix(in srgb, var(--default-color), transparent 70%);
+      }
+  
+      .contact .php-email-form button[type="submit"] {
+        color: var(--contrast-color);
+        background: var(--accent-color);
+        border: 0;
+        padding: 10px 30px;
+        transition: 0.4s;
+        border-radius: 50px;
+      }
+  
+      .contact .php-email-form button[type="submit"]:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 20%);
+      }
+    </style>
 
 </head>
 
@@ -61,15 +153,15 @@
       <!--========================================
       Logo and Navigation
       ===============================================-->
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="./assets/img/logoFaviconIcon/poultryEquipmentHubLogoMain.png" alt="Poultry Equipment Hub Logo">
+      <a href="/index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="/assets/img/logoFaviconIcon/poultryEquipmentHubLogoMain.png" alt="Poultry Equipment Hub Logo">
         <!--<h1 class="sitename"><strong>Poultry Equipment Hub</strong></h1>-->
       </a>
 
       <!--====================================
       Search Box
       =====================================-->
-      <form id="search-form" action="./search-results/search-results.html" method="GET">
+      <form id="search-form" action="/search-results/search-results.html" method="GET">
         <button id="search-toggle">Search</button>
         <input type="text" id="search-input" name="query" placeholder="Search products..." style="display: none;" />
       </form>
@@ -81,9 +173,9 @@
         <ul>
           <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="../about-us/about.html">About Us</a></li>
+              <li><a href="/about-us/about.html">About Us</a></li>
               <!--<li><a href="/about-us/our-team.html">Our Team</a></li>-->
-              <li><a href="../about-us/Frequently-Asked-Questions.html">FAQs</a></li>
+              <li><a href="/about-us/Frequently-Asked-Questions.html">FAQs</a></li>
               <!--<li><a href="../about-us/privacy-policy.html">Privacy Policy</a></li>
               <li><a href="../about-us/terms-&-conditions.html">Terms & Conditions</a></li>-->
             </ul>
@@ -116,12 +208,12 @@
               <li><a href="/product-categories/wheels-brakes.html">Wheels and brakes</a></li>
             </ul>
           </li>-->
-          <li><a href="contact-us.html">24/7 Support</a></li>
+          <li><a href="/contact-us.html">24/7 Support</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="allProducts.html">Find Equipment</a>
+      <a class="btn-getstarted" href="/allProducts.html">Find Equipment</a>
 
     </div>
   </header>
@@ -218,8 +310,8 @@
               <i class="bi bi-envelope"></i>
               <h3>Email Us</h3>
               <p><a href="mailto:sales@poultryequipmenthub.co.ke">
-                <strong>sales@poultryequipmenthub.co.ke</strong>
-              </a></p>
+                  <strong>sales@poultryequipmenthub.co.ke</strong>
+                </a></p>
             </div>
           </div><!-- End Info Item -->
 
@@ -290,7 +382,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/index.html" class="logo d-flex align-items-center">
             <span class="sitename">Poultry Equipment Hub</span>
           </a>
           <div class="footer-contact pt-3">
@@ -363,7 +455,7 @@
       </p>
       <div class="credits">
         Powered by <a href="https://wa.me/254113015069/" class="logo d-flex align-items-center"><img
-            src="../assets/img/clients/surge-logo.png" alt="surge innovations logo" /></a>
+            src="/assets/img/clients/surge-logo.png" alt="surge innovations logo" /></a>
       </div>
     </div>
 
@@ -379,15 +471,15 @@
   -->
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/search-toggle.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/search-toggle.js"></script>
 
 </body>
 
