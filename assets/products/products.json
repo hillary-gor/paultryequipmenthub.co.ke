@@ -1,5 +1,964 @@
 {
   "products": [
-    
+    {
+      "id": 100,
+      "name": "Metallic Dog Cage",
+      "type": "simple",
+      "sale_price": 6000,
+      "regular_price": 6700,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH100.png"
+      ],
+      "brand": null,
+      "categories": "Dog Cages",
+      "short_description": "Durable and spacious metallic dog cage designed for comfort and security. Ideal for indoor and outdoor use.",
+      "description": "This premium metallic dog cage provides a safe and secure space for your pet, whether at home or during travel. Crafted from sturdy metal, it’s built to last and offers ample ventilation for your dog’s comfort. Its portable design and easy-to-clean surface make it the perfect choice for pet owners seeking reliability and convenience.",
+      "sku": "PEH100",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 101,
+      "name": "Feedmixer and grinder",
+      "type": "simple",
+      "sale_price": 380000,
+      "regular_price": 390000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH101.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Efficient feed mixer and grinder for preparing nutrient-rich livestock feed. Saves time and effort.",
+      "description": "The feed mixer and grinder combine robust mixing and grinding capabilities, ensuring evenly mixed, high-quality feed for livestock. It handles grains and feed ingredients effortlessly, improving efficiency and reducing preparation time. Designed for durability and ease of use, this machine is perfect for farms of all sizes.",
+      "sku": "PEH101",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 102,
+      "name": "600kg Pellet Machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 260000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH102.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "High-capacity pellet machine producing 600kg of livestock feed per hour.",
+      "description": "Boost your feed production with this 600kg pellet machine, perfect for creating consistent, nutrient-packed pellets for livestock. Built with industrial-grade materials, this machine offers high efficiency and durability. Whether for small or large-scale farming, it provides a cost-effective way to meet your feed needs.",
+      "sku": "PEH102",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 103,
+      "name": "4.5 Tone Chaff Cutter Machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 240000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH103.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Heavy-duty chaff cutter with a capacity of 4.5 tonnes per hour.",
+      "description": "The 4.5-tonne chaff cutter machine is designed for large-scale agricultural operations. It cuts through fodder and grass effortlessly, ensuring uniform feed for livestock. With its robust build and impressive output, this machine saves time and reduces labor costs, making it an essential tool for progressive farms.",
+      "sku": "PEH103",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 104,
+      "name": "Diesel engine pelletizing machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 320000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH104.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Reliable pelletizing machine powered by a diesel engine for off-grid use.",
+      "description": "This diesel-powered pelletizing machine is perfect for farms without stable electricity supply. It efficiently converts feed ingredients into high-quality pellets, ensuring proper nutrition for livestock. Designed for rugged use, it’s a dependable solution for modern farming needs.",
+      "sku": "PEH104",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 105,
+      "name": "Multiple purpose chaff cutter",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 70000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH105.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Versatile chaff cutter suitable for grass, straw, and silage preparation.",
+      "description": "The multi-purpose chaff cutter is a must-have for any farmer looking to prepare livestock feed efficiently. It handles grass, straw, and silage with ease, delivering consistent results. With its compact design and powerful performance, it’s an excellent choice for small and large farms alike.",
+      "sku": "PEH105",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 106,
+      "name": "1056 Egg Incubator",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 80000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH106.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Fully automatic 1056-egg incubator for high-capacity hatching.",
+      "description": "Maximize your poultry productivity with this 1056-egg incubator. It features advanced automation for temperature and humidity control, ensuring optimal hatching conditions. Ideal for commercial hatcheries, this incubator is designed for efficiency and reliability.",
+      "sku": "PEH106",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 107,
+      "name": "80cm Chicken Plucker",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 95000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH107.png"
+      ],
+      "brand": null,
+      "categories": "Chicken Pluckers",
+      "short_description": "Compact 528-egg incubator with fully automatic temperature control.",
+      "description": "This 528-egg incubator is equipped with cutting-edge technology for precise temperature and humidity regulation. Its compact design makes it ideal for small to medium-scale hatcheries, ensuring high hatch rates with minimal effort.",
+      "sku": "PEH107",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 108,
+      "name": "528egg Incubator Fully Automatic",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 60000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH108.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Efficient and compact 528-egg incubator with fully automatic controls for high hatch rates.",
+      "description": "Streamline your poultry hatching process with this fully automatic 528-egg incubator. Designed for small to medium-scale hatcheries, it features advanced automation for precise temperature and humidity regulation, as well as automatic egg turning. Its compact design ensures it fits easily in your workspace while maintaining optimal performance. Built to maximize hatch rates with minimal effort, this incubator is a reliable choice for poultry farmers seeking efficiency and productivity.",
+      "sku": "PEH108",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 109,
+      "name": "56egg incubator ac/dc Solar powered",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 12000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH109.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Eco-friendly, solar-powered incubator for 56 eggs. Ideal for off-grid use.",
+      "description": "Harness the power of the sun with this 56-egg solar-powered incubator. Designed for farms in remote areas, it operates on both AC and DC power. Fully automatic controls ensure consistent hatching conditions, making it an environmentally friendly choice for poultry farming.",
+      "sku": "PEH109",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 110,
+      "name": "64egg incubator ac/dc fully automatic",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 14000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH110.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Compact 64-egg incubator with AC/DC compatibility and fully automatic controls.",
+      "description": "The 64-egg incubator offers the perfect blend of efficiency and versatility. Designed for both AC and DC power sources, it’s ideal for areas with unstable electricity or off-grid operations. Fully automatic controls ensure precise temperature and humidity regulation, while the automatic egg turning function enhances hatch rates. Compact yet powerful, this incubator is an excellent choice for small-scale poultry farmers looking to maximize productivity with minimal hassle.",
+      "sku": "PEH110",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 111,
+      "name": "150kg Extruder machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 450000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH111.png"
+      ],
+      "brand": null,
+      "categories": "Extruders",
+      "short_description": "Efficient 150kg/hour extruder machine for high-quality feed production.",
+      "description": "The 150kg extruder machine is a powerful solution for producing premium-quality feed pellets. With a capacity of 150kg per hour, it’s ideal for small to medium-scale operations. This machine is designed to handle a variety of raw materials, ensuring consistent and nutritious feed for livestock and aquaculture. Built for durability and ease of use, it reduces processing time and enhances productivity, making it a reliable choice for modern farming needs.",
+      "sku": "PEH111",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 112,
+      "name": "1056egg incubator with both fully hatchery",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 85000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH112.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Dual-function 1056-egg incubator with integrated hatching capability.",
+      "description": "Streamline your poultry operation with this 1056-egg incubator featuring both incubation and hatching functionality. The fully automatic system ensures precise temperature and humidity control, maximizing hatch rates. Ideal for commercial operations, this incubator allows you to hatch and incubate simultaneously, saving time and increasing efficiency.",
+      "sku": "PEH112",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 113,
+      "name": "192egg Incubator Fully automatic",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 26000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH113.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Compact 192-egg incubator with advanced automation for small-scale hatcheries.",
+      "description": "The 192-egg incubator is perfect for small to medium-scale poultry operations. With fully automatic controls for temperature, humidity, and egg turning, it ensures consistent and high hatch rates. Built for reliability, its compact design makes it ideal for farms with limited space while delivering exceptional performance.",
+      "sku": "PEH113",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 114,
+      "name": "Chicks feeding trough",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 250,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH114.png"
+      ],
+      "brand": null,
+      "categories": "Feeders and Drinkers",
+      "short_description": "Durable feeding trough designed to optimize feed distribution for chicks.",
+      "description": "This chicks feeding trough is crafted to evenly distribute feed, minimizing waste and ensuring easy access for young poultry. Its sturdy, lightweight design is easy to clean and highly durable, making it a practical choice for small and large poultry farms.",
+      "sku": "PEH114",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 115,
+      "name": "Chicken cage's",
+      "type": "simple",
+      "sale_price": 36000,
+      "regular_price": 37000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH115.png"
+      ],
+      "brand": null,
+      "categories": "Chicken Cages",
+      "short_description": "Durable chicken cages for secure and efficient poultry management.",
+      "description": "Keep your poultry safe and organized with these high-quality chicken cages. Designed for durability and ventilation, they provide a comfortable living space for chickens. Easy to clean and maintain, these cages are a practical solution for small and large poultry farms.",
+      "sku": "PEH115",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 116,
+      "name": "Chicks feeding tray",
+      "type": "simple",
+      "sale_price": 450,
+      "regular_price": 500,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH116.png"
+      ],
+      "brand": null,
+      "categories": "Feeders and Drinkers",
+      "short_description": "Convenient feeding tray for chicks, designed for easy access and minimal waste.",
+      "description": "Simplify feeding for your young poultry with this chicks feeding tray. Its low-profile design ensures chicks can comfortably access feed, while its sturdy material resists wear and tear. Lightweight and easy to clean, it’s an essential addition to any poultry farm.",
+      "sku": "PEH116",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 117,
+      "name": "Chick's feeding trough",
+      "type": "simple",
+      "sale_price": 250,
+      "regular_price": 300,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH117.png"
+      ],
+      "brand": null,
+      "categories": "Feeders and Drinkers",
+      "short_description": "Efficient feeding trough designed specifically for chicks.",
+      "description": "This chick’s feeding trough ensures consistent and clean feed delivery for young birds. Made from durable materials, it’s easy to clean and prevents spillage, helping you maintain a tidy feeding area while promoting healthy growth for your chicks.",
+      "sku": "PEH117",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 118,
+      "name": "Automatic water refill bell drinker",
+      "type": "simple",
+      "sale_price": 1200,
+      "regular_price": 1300,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH118.png"
+      ],
+      "brand": null,
+      "categories": "Feeders and Drinkers",
+      "short_description": "Automatic water drinker for hassle-free poultry hydration.",
+      "description": "Ensure your poultry stays hydrated with this automatic water refill bell drinker. It maintains a consistent water level, reducing manual labor and ensuring fresh water is always available. Durable and easy to install, it’s an essential tool for efficient poultry farming.",
+      "sku": "PEH118",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 119,
+      "name": "Silage Baler Machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 1250000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH119.png"
+      ],
+      "brand": null,
+      "categories": "Farm Equipment",
+      "short_description": "Efficient silage baler for compacting and wrapping livestock feed.",
+      "description": "This silage baler machine streamlines feed storage by compressing and wrapping silage into durable bales. It preserves nutrients and reduces spoilage, ensuring year-round feed availability. Designed for ease of operation, it’s perfect for modern farms looking to optimize efficiency.",
+      "sku": "PEH119",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 120,
+      "name": "60cm Chicken Plucker",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 65000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH120.png"
+      ],
+      "brand": null,
+      "categories": "Chicken Pluckers",
+      "short_description": "Efficient 60cm chicken plucker for fast and thorough feather removal.",
+      "description": "Speed up your poultry processing with this 60cm chicken plucker. Built for durability and high efficiency, it removes feathers quickly without damaging the bird. Ideal for small and medium-scale operations, this machine saves time and reduces labor costs.",
+      "sku": "PEH120",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 121,
+      "name": "50cm Chicken Plucker",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 55000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH121.png"
+      ],
+      "brand": null,
+      "categories": "Chicken Pluckers",
+      "short_description": "Compact 50cm chicken plucker for small to medium poultry processing.",
+      "description": "The 50cm chicken plucker is designed for precision and efficiency. It swiftly removes feathers with minimal effort, making it a valuable tool for small-scale poultry farmers. Its compact design ensures easy storage, while its durable construction guarantees long-lasting performance.",
+      "sku": "PEH121",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 122,
+      "name": "200kg Pellet Machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 185000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH122.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Robust 200kg/hour pellet machine for creating high-quality livestock feed.",
+      "description": "This 200kg pellet machine is a reliable solution for producing consistent and nutritious feed pellets for livestock. Its high capacity makes it ideal for small to medium-scale farms, while its durable build ensures longevity. Easy to operate and maintain, it’s a valuable addition to your feed processing operations.",
+      "sku": "PEH122",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 123,
+      "name": "136egg Incubator",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 24000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH123.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Efficient 136-egg incubator with fully automatic controls.",
+      "description": "The 136-egg incubator is perfect for small-scale hatcheries, offering advanced automation for temperature, humidity, and egg turning. Designed for ease of use, its compact design and reliable performance make it a practical choice for farmers looking to improve their hatch rates.",
+      "sku": "PEH123",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 124,
+      "name": "68egg incubator ac/dc fully automatic",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 15000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH124.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Versatile 68-egg incubator compatible with AC/DC power sources.",
+      "description": "The 68-egg incubator offers fully automatic controls for precise hatching conditions and supports both AC and DC power. It’s an excellent option for farmers in remote locations or those with unreliable electricity. Compact, efficient, and easy to use, it ensures high hatch rates with minimal effort.",
+      "sku": "PEH124",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 125,
+      "name": "Feed Grinder Poshomill",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 70000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH125.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "High-performance feed grinder for efficient milling of grains and feed.",
+      "description": "This feed grinder poshomill is designed to process grains into fine feed for livestock, ensuring optimal nutrition. Its robust construction and efficient milling mechanism make it suitable for small and large-scale farming operations. Durable, reliable, and easy to operate, it’s an essential tool for modern farms.",
+      "sku": "PEH125",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 126,
+      "name": "500kg Feedmixer",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 360000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH126.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Efficient 500kg feed mixer for uniform and consistent feed preparation.",
+      "description": "Prepare high-quality livestock feed with this 500kg feed mixer. Designed for medium-scale farms, it mixes feed ingredients thoroughly, ensuring even distribution of nutrients. Built for durability and ease of use, this machine helps you save time and improve feed quality.",
+      "sku": "PEH126",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 127,
+      "name": "200kg/h Min Feedmixer",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 98000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH127.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Compact feed mixer with a 200kg/hour capacity for small farms.",
+      "description": "The 200kg/h mini feed mixer is perfect for small-scale farming operations. It blends feed ingredients quickly and uniformly, ensuring consistent quality. Its compact size and user-friendly design make it an efficient and convenient choice for farmers with limited space.",
+      "sku": "PEH127",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 128,
+      "name": "Extruder Machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 580000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH128.png"
+      ],
+      "brand": null,
+      "categories": "Extruders",
+      "short_description": "Versatile extruder machine for high-quality feed production.",
+      "description": "This extruder machine is designed for efficient and consistent feed production. It handles a variety of ingredients, ensuring the creation of nutrient-rich pellets for livestock or aquaculture. Durable and easy to operate, it’s a reliable solution for farms of all sizes.",
+      "sku": "PEH128",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 129,
+      "name": "1 Tonne Pellet Machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 370000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH129.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "High-capacity 1-tonne pellet machine for large-scale feed production.",
+      "description": "The 1-tonne pellet machine is built for industrial-scale feed production, capable of handling large volumes efficiently. It produces consistent, high-quality pellets, ensuring livestock receive optimal nutrition. Durable and robust, it’s an excellent choice for large-scale farming operations.",
+      "sku": "PEH129",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 130,
+      "name": "Deepeaker Machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 22000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH130.png"
+      ],
+      "brand": null,
+      "categories": "Electronics",
+      "short_description": "Efficient deepeaker machine for safe and humane poultry debeaking.",
+      "description": "This deepeaker machine is designed for precision and safety during the poultry debeaking process. It minimizes stress on the birds while ensuring accurate results. Built with user safety in mind, it’s an essential tool for poultry farmers looking to enhance flock management.",
+      "sku": "PEH130",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 131,
+      "name": "30cm Incubator Fan",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 55000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH131.png"
+      ],
+      "brand": null,
+      "categories": "Spares & Equipment",
+      "short_description": "Reliable 30cm fan for maintaining optimal airflow in incubators.",
+      "description": "Ensure consistent airflow in your incubator with this 30cm fan. It promotes uniform temperature and humidity distribution, improving hatch rates. Durable and efficient, this fan is a crucial component for any incubator setup.",
+      "sku": "PEH131",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 132,
+      "name": "100kg pelletising machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 110000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH132.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Compact 100kg/hour pelletizing machine for small-scale feed production.",
+      "description": "The 100kg pelletizing machine is ideal for small farms, offering efficient and reliable feed production. It produces high-quality pellets that meet the nutritional needs of livestock. Easy to operate and maintain, it’s perfect for farmers starting with pellet production.",
+      "sku": "PEH132",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 133,
+      "name": "5280egg Incubator",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 380000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH133.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "High-capacity incubator for up to 5280 eggs. Fully automated for optimal hatching.",
+      "description": "Achieve industrial-scale hatching with this 5280-egg incubator. Featuring advanced automation for temperature, humidity, and turning, it ensures high hatch rates. Perfect for large-scale poultry businesses, it’s designed to deliver consistent, reliable performance.",
+      "sku": "PEH133",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 134,
+      "name": "Pellet machine rollers",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 15000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH134.png"
+      ],
+      "brand": null,
+      "categories": "Spares & Equipment",
+      "short_description": "Durable pellet machine rollers for efficient feed pellet production.",
+      "description": "These high-quality pellet machine rollers are designed to ensure consistent and efficient pellet production. Built from durable materials, they withstand heavy usage, offering reliability and precision in feed processing. Suitable for a variety of pelletizing machines, they are an essential component for maintaining optimal performance.",
+      "sku": "PEH134",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 135,
+      "name": "Chopping grass machine 1tone/h",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 70000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH135.png"
+      ],
+      "brand": null,
+      "categories": "Farm Equipment",
+      "short_description": "High-capacity grass chopper with 1-tonne per hour output for livestock feed.",
+      "description": "Prepare nutrient-rich fodder with this 1-tonne per hour grass chopping machine. It processes a variety of grasses and crops quickly and efficiently, ensuring uniform and easily digestible feed for livestock. Durable and easy to operate, this machine is perfect for large-scale farming needs.",
+      "sku": "PEH135",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 136,
+      "name": "1 tonne Feedmixer including Grinder",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 380000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH136.png"
+      ],
+      "brand": null,
+      "categories": "Feed Machines",
+      "short_description": "Robust feed mixer and grinder capable of handling 1 tonne per batch.",
+      "description": "This versatile 1-tonne feed mixer and grinder streamlines feed preparation by combining mixing and grinding functions. It delivers evenly mixed, high-quality feed, reducing preparation time and labor costs. Ideal for large-scale farms, it’s built for durability and efficiency, making it a smart investment for modern farmers.",
+      "sku": "PEH136",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 137,
+      "name": "Pellet machine die",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 15000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH137.png"
+      ],
+      "brand": null,
+      "categories": "Spares & Equipment",
+      "short_description": "Precision-engineered pellet machine die for smooth feed pellet production.",
+      "description": "Ensure consistent feed pellet quality with this precision-engineered pellet machine die. Crafted from durable materials, it offers excellent wear resistance and a smooth finish. Compatible with most pellet machines, this die is an essential component for achieving uniform and efficient pelletizing operations.",
+      "sku": "PEH137",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 138,
+      "name": "Mature Dog Cage",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 14000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH138.png"
+      ],
+      "brand": null,
+      "categories": "Dog Cages",
+      "short_description": "Spacious and sturdy cage designed specifically for mature dogs.",
+      "description": "Give your pet a secure and comfortable living space with this mature dog cage. Designed for larger breeds, it offers ample room and ventilation. Its robust construction ensures durability, while the easy-to-clean design makes maintenance hassle-free. Perfect for both indoor and outdoor use, this cage is a must-have for dog owners.",
+      "sku": "PEH138",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": 139,
+      "name": "2112egg Incubator",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 180000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH139.png"
+      ],
+      "brand": null,
+      "categories": "Incubators",
+      "short_description": "Large-capacity 2112-egg incubator with advanced automation for commercial use.",
+      "description": "The 2112-egg incubator is perfect for commercial poultry operations, featuring fully automatic temperature, humidity, and turning controls. It’s designed for high hatch rates, making it ideal for large-scale hatcheries. Built for reliability and ease of use, this incubator streamlines the hatching process, saving time and improving efficiency.",
+      "sku": "PEH139",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    }
   ]
 }
