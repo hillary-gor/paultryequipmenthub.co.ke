@@ -1,84 +1,155 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productSku = urlParams.get("sku"); // Get the 'sku' parameter from the URL
-
-    fetch("/assets/products/products.json")
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Failed to fetch products");
-            }
-            return response.json();
-        })
-        .then((products) => {
-            const product = products.find((p) => p.sku === productSku);
-
-            const productDetailsContainer = document.getElementById("product-details-container");
-
-            if (product) {
-                // Provide default values for missing fields
-                const name = product.name || "Unnamed Product";
-                const price = product.currency ? `${product.currency} ${product.price}` : "Price not available";
-                const image = product.image || "/assets/img/skyjet-placeholder.png";
-                const description = product.description || "No description available";
-                const brand = product.brand || "Unknown Brand";
-                const category = product.category || "Uncategorized";
-                const partNumber = product.part_number || "N/A";
-                const alternate = product.alternate || "No alternates available";
-                const manufacturer = product.manufacturer || "Unknown Manufacturer";
-                const availability = product.availability || "Check availability";
-
-                // Dynamically inject the product details HTML into the page
-                productDetailsContainer.innerHTML = `
-            <div class="product-main">
-                <h2>${name}</h2>
-                <hr>
-                <div class="product-details">
-                    <div class="product-images">
-                        <img class="main-image" src="${image}" alt="${name}" onerror="this.src='/assets/img/skyjet-placeholder.png'">
-                    </div>
-                    <div class="product-info">
-                        <p><strong>SKU:</strong> ${product.sku}</p>
-                        <p><strong>Part Number:</strong> ${partNumber}</p>
-                        <p><strong>Category:</strong> ${category}</p>
-                        <p><strong>Alternate Numbers:</strong> ${alternate}</p>
-                        <p><strong>Manufacturer:</strong> ${manufacturer}</p>
-                        <p class="product-price" style="color: blue; font-weight: bold;">${price}</p>
-                        <p><strong>Availability:</strong> ${availability}</p>
-                        <p><strong>Description:</strong> ${description}</p>
-                        <p><strong>Brand:</strong> ${brand}</p>
-                        
-                        <div class="product-actions">
-                            <button id="whatsapp-order">Order via WhatsApp</button>
-                            <button id="call-order">Order via Call</button>
-                            <button id="email-order">Order via Email</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          `;
-
-                // Add event listeners for order buttons
-                document.getElementById("whatsapp-order").addEventListener("click", () => {
-                    const whatsappMessage = `Hello, I would like to order the following product:\n\nName: ${name}\nPrice: ${price}\nDescription: ${description}\nBrand: ${brand}\nCategory: ${category}\nAvailability: ${availability}`;
-                    window.open(`https://wa.me/254796962055?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
-                });
-
-                document.getElementById("call-order").addEventListener("click", () => {
-                    window.location.href = "tel:+254796962055";
-                });
-
-                document.getElementById("email-order").addEventListener("click", () => {
-                    const emailSubject = `Order for ${name}`;
-                    const emailBody = `Hello,\n\nI would like to order the following product:\n\nName: ${name}\nPrice: ${price}\nDescription: ${description}\nBrand: ${brand}\nCategory: ${category}\nAvailability: ${availability}`;
-                    window.location.href = `mailto:khilary4600@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-                });
-            } else {
-                productDetailsContainer.innerHTML = "<p>Product not found.</p>";
-            }
-        })
-        .catch((error) => {
-            const productDetailsContainer = document.getElementById("product-details-container");
-            productDetailsContainer.innerHTML = "<p>Error fetching product details. Please try again later.</p>";
-            console.error("Error fetching product details:", error);
-        });
-});
+// Fetch product details by SKU and display details and similar products
+async function fetchProductDetails() {
+    const params = new URLSearchParams(window.location.search);
+    const sku = params.get("sku");
+  
+    if (!sku) {
+      displayError("Product not found.");
+      return;
+    }
+  
+    try {
+      const response = await fetch("/assets/products/products.json");
+      const data = await response.json();
+      const product = data.products.find((p) => p.sku === sku);
+  
+      if (!product) {
+        displayError("Product not found.");
+      } else {
+        displayProductDetails(product);
+        displaySimilarProducts(product, data.products);
+      }
+    } catch (error) {
+      console.error("Error fetching product details:", error);
+      displayError("Unable to fetch product details. Please try again later.");
+    }
+  }
+  
+  // Display detailed product information
+  function displayProductDetails(product) {
+    const container = document.getElementById("product-details-container");
+  
+    const priceWithCurrency = `${product.currency || "USD"} ${
+      product.sale_price || product.regular_price || "N/A"
+    }`;
+    const productImage =
+      product.images.length > 0
+        ? product.images[0]
+        : "/assets/img/skyjet-placeholder.png";
+  
+    const dimensions = product.dimensions_cm
+      ? `${product.dimensions_cm.length || "N/A"} x ${
+          product.dimensions_cm.width || "N/A"
+        } x ${product.dimensions_cm.height || "N/A"} cm`
+      : "N/A";
+  
+    const inStock = product.in_stock ? "Yes" : "No";
+  
+    container.innerHTML = `
+      <div class="product-detail">
+        <img 
+          src="${productImage}" 
+          alt="${product.name}" 
+          class="product-detail-image" 
+          onerror="this.src='/assets/img/skyjet-placeholder.png'"
+        >
+        <div class="product-info">
+          <h1 class="product-name">${product.name}</h1>
+          <h2 class="product-price">${priceWithCurrency}</h2>
+          <p class="product-short-description">${
+            product.short_description || "No short description available."
+          }</p>
+          <p class="product-description">${
+            product.description || "No detailed description available."
+          }</p>
+  
+          <ul class="product-specifications">
+            <li><strong>SKU:</strong> ${product.sku}</li>
+            <li><strong>Barcode:</strong> ${product.barcode || "N/A"}</li>
+            <li><strong>Brand:</strong> ${product.brand || "N/A"}</li>
+            <li><strong>Category:</strong> ${product.categories || "N/A"}</li>
+            <li><strong>Manufacturer:</strong> ${
+              product.manufacturer || "N/A"
+            }</li>
+            <li><strong>In Stock:</strong> ${inStock}</li>
+            <li><strong>Weight (kg):</strong> ${product.weight_kg || "N/A"}</li>
+            <li><strong>Dimensions (L x W x H):</strong> ${dimensions}</li>
+          </ul>
+  
+          <a 
+            href="https://wa.me/+254711654351?text=${encodeURIComponent(
+              `Hi, I'm interested in ordering the product "${product.name}" (SKU: ${product.sku}). Could you please provide more details?\n\nProduct Image: ${productImage}`
+            )}" 
+            target="_blank" 
+            class="btn order-whatsapp"
+          >
+            <img 
+              src="/assets/img/logoFaviconIcon/whatsapp.png" 
+              alt="WhatsApp Icon" 
+              class="whatsapp-icon"
+            >
+            Enquire via WhatsApp
+          </a>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Display similar products
+  function displaySimilarProducts(currentProduct, allProducts) {
+    const container = document.getElementById("similar-products-container");
+  
+    // Filter products in the same category excluding the current product
+    const similarProducts = allProducts.filter(
+      (product) =>
+        product.categories === currentProduct.categories &&
+        product.sku !== currentProduct.sku
+    );
+  
+    if (similarProducts.length === 0) {
+      container.innerHTML = "<p class='no-similar-products'>No similar products found.</p>";
+      return;
+    }
+  
+    const similarProductsHTML = similarProducts
+      .slice(0, 4) // Limit to 4 products
+      .map((product) => {
+        const productImage =
+          product.images.length > 0
+            ? product.images[0]
+            : "/assets/img/skyjet-placeholder.png";
+        return `
+          <div 
+            class="similar-product-card" 
+            onclick="redirectToDetails('${product.sku}')"
+            style="cursor: pointer;"
+          >
+            <img 
+              src="${productImage}" 
+              alt="${product.name}" 
+              class="similar-product-image" 
+              onerror="this.src='/assets/img/skyjet-placeholder.png'"
+            >
+            <h5 class="similar-product-name">${product.name}</h5>
+          </div>
+        `;
+      })
+      .join("");
+  
+    container.innerHTML = `<div class="similar-products-row">${similarProductsHTML}</div>`;
+  }
+  
+  // Redirect to product details page
+  function redirectToDetails(sku) {
+    window.location.href = `/product-details/product-details.html?sku=${sku}`;
+  }
+  
+  // Display error message
+  function displayError(message) {
+    const container = document.getElementById("product-details-container");
+    container.innerHTML = `<p class="error-message">${message}</p>`;
+  }
+  
+  // Fetch product details on page load
+  document.addEventListener("DOMContentLoaded", fetchProductDetails);
+  

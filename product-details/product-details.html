@@ -39,8 +39,8 @@
   <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="/assets/css/main.css" rel="stylesheet">
-  <link href="/assets/css/product-details.css" rel="stylesheet">
+   <link href="/assets/css/product-details.css" rel="stylesheet">
+  
 
 </head>
 
@@ -122,12 +122,18 @@
 
     </section>
 
-    <!-- Products fetched dynamically file-->
-    <section>
-      <div id="product-details-container">
-        <!-- The injected HTML from JavaScript will appear here -->
-      </div>
-    </section>
+    <!-- Product Details Section -->
+  <div id="product-details-container" class="product-details-container">
+    <!-- Product details will be dynamically rendered here -->
+  </div>
+
+  <!-- Similar Products Section -->
+  <section id="similar-products-section">
+    <h2>Similar Products</h2>
+    <div id="similar-products-container" class="similar-products-container">
+      <!-- Similar products will be dynamically rendered here -->
+    </div>
+  </section>
 
     <!-- How to order our spares and supplies--
     <section class="order-process-section">
