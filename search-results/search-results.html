@@ -53,7 +53,7 @@
       <!--========================================
       Logo and Navigation
       ===============================================-->
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="/index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <img src="/assets/img/logoFaviconIcon/poultryEquipmentHubLogoMain.png" alt="Poultry Equipment Hub Logo">
         <!--<h1 class="sitename"><strong>Poultry Equipment Hub</strong></h1>-->
       </a>
@@ -247,55 +247,22 @@
       let currentPage = 1;
       const productsPerPage = 20;
 
-      // Fetch products from JSON and store them in `allProducts`
+      // Fetch products from JSON
       async function fetchProducts() {
         try {
-          const response = await fetch("../assets/products/products.json");
+          const response = await fetch("/assets/products/products.json"); // Adjust path
           if (!response.ok) {
-            throw new Error("Failed to fetch products");
+            throw new Error(`HTTP error! Status: ${response.status}`);
           }
-          const data = await response.json(); // Fetch the entire JSON object
-          allProducts = data.products; // Access the 'products' array within the JSON
-          filterAndDisplayProducts(); // Filter and display products after fetching
-          populateFilters(allProducts); // Dynamically populate filter sections
+          const data = await response.json();
+          allProducts = data.products; // Ensure 'products' is the correct key
+          displayProducts(allProducts, document.getElementById("search-results-container"), currentPage);
+          renderPagination(allProducts.length);
         } catch (error) {
           console.error("Error fetching products:", error);
           document.getElementById("search-results-container").innerHTML =
             "<p>Error fetching products. Please try again later.</p>";
         }
-      }
-
-      // Get query parameter from URL
-      function getQueryParameter(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-      }
-
-      // Filter and display products based on the search query
-      function filterAndDisplayProducts() {
-        const query = getQueryParameter("query");
-        if (!query) {
-          document.getElementById("search-results-container").innerHTML =
-            "<p>No search query provided.</p>";
-          return;
-        }
-
-        const lowerCaseQuery = query.toLowerCase();
-        const filteredProducts = allProducts.filter(
-          (product) =>
-            product.name.toLowerCase().includes(lowerCaseQuery) ||
-            (product.description &&
-              product.description.toLowerCase().includes(lowerCaseQuery)) ||
-            (product.categories &&
-              product.categories.toLowerCase().includes(lowerCaseQuery))
-        );
-
-        displayProducts(
-          filteredProducts,
-          document.getElementById("search-results-container"),
-          currentPage
-        );
-        renderPagination(filteredProducts.length); // Add pagination controls
       }
 
       // Display products dynamically with pagination
@@ -309,7 +276,7 @@
           productHTML = "<p>No products found.</p>";
         } else {
           paginatedProducts.forEach((product) => {
-            const productImage = product.images && product.images[0] ? product.images[0] : "/assets/img/skyjet-placeholder.png";
+            const productImage = product.images?.[0] || "/assets/img/skyjet-placeholder.png";
             const priceWithCurrency = product.sale_price
               ? `${product.currency} ${product.sale_price}`
               : product.regular_price
@@ -340,32 +307,27 @@
         container.innerHTML = productHTML;
       }
 
-      // Render Pagination with Limited Page Numbers
+      // Render pagination
       function renderPagination(totalProducts) {
         const paginationContainer = document.getElementById("pagination-container");
         const totalPages = Math.ceil(totalProducts / productsPerPage);
-        const maxVisiblePages = 4; // Number of pages to show at a time
+        const maxVisiblePages = 4;
         let paginationHTML = "";
 
         // Previous Button
         paginationHTML += `
-            <button 
-                class="page-button prev" 
-                onclick="changePage(currentPage - 1)" 
-                ${currentPage === 1 ? "disabled" : ""}>
+            <button class="page-button prev" onclick="changePage(currentPage - 1)" ${currentPage === 1 ? "disabled" : ""}>
                 &lt;
             </button>
         `;
 
-        // Calculate visible page range
+        // Visible Page Numbers
         const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
         const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
         for (let i = startPage; i <= endPage; i++) {
           paginationHTML += `
-                <button 
-                    class="page-button ${i === currentPage ? "active" : ""}" 
-                    onclick="changePage(${i})">
+                <button class="page-button ${i === currentPage ? "active" : ""}" onclick="changePage(${i})">
                     ${i}
                 </button>
             `;
@@ -373,10 +335,7 @@
 
         // Next Button
         paginationHTML += `
-            <button 
-                class="page-button next" 
-                onclick="changePage(currentPage + 1)" 
-                ${currentPage === totalPages ? "disabled" : ""}>
+            <button class="page-button next" onclick="changePage(currentPage + 1)" ${currentPage === totalPages ? "disabled" : ""}>
                 &gt;
             </button>
         `;
@@ -384,60 +343,17 @@
         paginationContainer.innerHTML = paginationHTML;
       }
 
-      // Change page function
+      // Change page
       function changePage(pageNumber) {
         const totalPages = Math.ceil(allProducts.length / productsPerPage);
-
         if (pageNumber > 0 && pageNumber <= totalPages) {
           currentPage = pageNumber;
-          filterAndDisplayProducts();
+          displayProducts(allProducts, document.getElementById("search-results-container"), currentPage);
+          renderPagination(allProducts.length);
         }
       }
 
-      // Dynamically populate filters
-      function populateFilters(products) {
-        const categories = [...new Set(products.map((product) => product.categories).filter(Boolean))];
-        populateFilterSection("category", categories);
-      }
-
-      // Populate individual filter section
-      function populateFilterSection(filterId, items) {
-        const filterContent = document.getElementById(filterId);
-        let filterHTML = "";
-        items.forEach((item) => {
-          filterHTML += `
-                <label>
-                    <input type="checkbox" value="${item}" onchange="filterProducts()">
-                    ${item}
-                </label>
-            `;
-        });
-        filterContent.innerHTML = filterHTML;
-      }
-
-      // Filter products based on selected filters
-      function filterProducts() {
-        const selectedCategories = getSelectedFilterValues("category");
-        let filteredProducts = allProducts;
-
-        if (selectedCategories.length > 0) {
-          filteredProducts = filteredProducts.filter((product) =>
-            selectedCategories.includes(product.categories)
-          );
-        }
-
-        currentPage = 1; // Reset to the first page after filtering
-        displayProducts(filteredProducts, document.getElementById("search-results-container"), currentPage);
-        renderPagination(filteredProducts.length);
-      }
-
-      // Get selected filter values
-      function getSelectedFilterValues(filterId) {
-        const checkboxes = document.querySelectorAll(`#${filterId} input[type="checkbox"]:checked`);
-        return Array.from(checkboxes).map((checkbox) => checkbox.value);
-      }
-
-      // Fetch products on page load
+      // Initialize
       fetchProducts();
     });
 
