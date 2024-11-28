@@ -959,6 +959,54 @@
         "width": null,
         "height": null
       }
+    },
+    {
+      "id": 140,
+      "name": "Chicken transportation cage",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 4000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH140.png"
+      ],
+      "brand": null,
+      "categories": "Chicken Cages",
+      "short_description": "Large-capacity chicked trasport cage.",
+      "description": "This allows you to move chicken efficiently withoug ever worrying about their condition since they'le be safely delivered. Purchase this for reliable chicken transportation",
+      "sku": "PEH140",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+     {
+      "id": 141,
+      "name": "! tonne Feedmixer machine",
+      "type": "simple",
+      "sale_price": null,
+      "regular_price": 4000,
+      "currency": "Ksh",
+      "images": [
+        "https://poultryequipmenthub.co.ke/assets/img/products/PEH140.png"
+      ],
+      "brand": null,
+      "categories": "Chicken Cages",
+      "short_description": "Large-capacity chicked trasport cage.",
+      "description": "This allows you to move chicken efficiently withoug ever worrying about their condition since they'le be safely delivered. Purchase this for reliable chicken transportation",
+      "sku": "PEH140",
+      "manufacturer": null,
+      "in_stock": true,
+      "weight_kg": null,
+      "dimensions_cm": {
+        "length": null,
+        "width": null,
+        "height": null
+      }
     }
   ]
 }
