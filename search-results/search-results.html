@@ -250,7 +250,7 @@
       // Fetch products from JSON
       async function fetchProducts() {
         try {
-          const response = await fetch("/assets/products/products.json"); // Adjust path
+          const response = await fetch("/assets/products/products.json"); // Adjust path as needed
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
@@ -277,14 +277,21 @@
         } else {
           paginatedProducts.forEach((product) => {
             const productImage = product.images?.[0] || "/assets/img/skyjet-placeholder.png";
-            const priceWithCurrency = product.sale_price
-              ? `${product.currency} ${product.sale_price}`
-              : product.regular_price
-                ? `${product.currency} ${product.regular_price}`
-                : "Price not available";
+
+            let priceHTML = "";
+            if (product.sale_price) {
+              priceHTML = `
+                        <span class="sale-price">${product.currency} ${product.sale_price}</span>
+                        <del class="regular-price">${product.currency} ${product.regular_price}</del>
+                    `;
+            } else if (product.regular_price) {
+              priceHTML = `<span class="regular-price">${product.currency} ${product.regular_price}</span>`;
+            } else {
+              priceHTML = `<span class="price-not-available">Price not available</span>`;
+            }
 
             productHTML += `
-                    <div class="product-card">
+                    <div class="product-card" onclick="redirectToDetails('${product.sku}')" style="cursor: pointer;">
                         <img 
                             src="${productImage}" 
                             alt="${product.name}" 
@@ -293,11 +300,10 @@
                         >
                         <div class="product-details">
                             <h5 class="product-name">${product.name}</h5>
-                            <h4 class="product-price">${priceWithCurrency}</h4>
+                            <div class="product-price">${priceHTML}</div>
                             <p class="product-part-number"><strong>SKU:</strong> ${product.sku}</p>
                             <p class="product-category"><strong>Category:</strong> ${product.categories || "Uncategorized"}</p>
                             <p class="product-brand"><strong>Brand:</strong> ${product.brand || "Unknown"}</p>
-                            <a href="/product-details/product-details.html?sku=${product.sku}" class="btn view-more">More Details</a>
                         </div>
                     </div>
                 `;
@@ -305,6 +311,11 @@
         }
 
         container.innerHTML = productHTML;
+      }
+
+      // Redirect to product details page
+      function redirectToDetails(sku) {
+        window.location.href = `/product-details/product-details.html?sku=${sku}`;
       }
 
       // Render pagination
